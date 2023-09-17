@@ -1,2 +1,7 @@
 CARLOS
-helloCarlos (Hello World);
+joshua test() =>
+    helloCarlos(Hello World)
+;
+
+test()
+helloCarlos(Hello World)

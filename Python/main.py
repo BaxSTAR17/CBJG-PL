@@ -10,11 +10,8 @@ def main():
     evaluator = Eval(parsel.AST)
 
     lexer.tokenizer()
-
     parsel.runAST()
-
     evaluator.run(parsel.AST)
-    
 
 if __name__ == '__main__':
     main()

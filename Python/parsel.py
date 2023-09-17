@@ -4,12 +4,17 @@ class Parsel:
         self.AST = []
 
     def add_node(self, parent, node):
-        for a in self.AST:
-            if parent in a:
-                a[parent].append(node)
+        if self.AST == []:
+            if parent == {}:
+                self.AST.append(node)
+        else:
+            for a in self.AST:
+                if parent in a:
+                    a[parent].append(node)
 
     def runAST(self):
         saved = {}
+        parent2 = {}
         parent = {}
         collect = False
 
@@ -40,5 +45,26 @@ class Parsel:
                     collect = True
                 else:
                     t = {saved['value']: token['value']}
+                    self.add_node(parent, t)
+                    collect = False
+            
+            elif token['id'] == 'keyword' and token['value'] == 'joshua':
+                index = self.tokens.index(token)
+                t = {token['value']: self.tokens[index+1]['value']}
+                self.add_node(parent, t)
+
+            elif token['id'] == 'function name':
+                t = {token['value']: []}
+
+                if parent != t:
+                    parent = token['value']
+                    self.AST.append(t)
+
+            elif token['id'] == 'function block':
+                if collect == False:
+                    saved = token
+                    collect = True
+                else:
+                    t = {token['id']: token['value']}
                     self.add_node(parent, t)
                     collect = False
