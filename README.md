@@ -1,2 +1,4 @@
-# Carlos-Programming-Language
-helloCarlos
+# CBJG-PL
+functions so far:
+helloCarlos()
+
