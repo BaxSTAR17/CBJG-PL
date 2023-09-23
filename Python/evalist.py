@@ -6,6 +6,7 @@ class Eval:
         self.AST = AST
         self.fname = []
         self.fblock = []
+        self.ftemp = 0
 
     def run(self, node):
         if isinstance(node, list):
@@ -33,11 +34,13 @@ class Eval:
             parsel.runAST()
             for n in parsel.AST:
                 for k, v in n.items():
+                    self.ftemp = k
                     self.fblock.append(v)
                     
         elif loc[0] == self.fname[0]:
-            func = f'def {self.fname[0]}(): print("{self.fblock[0]}")'
-            tion = f'{self.fname[0]}()'
+            if self.ftemp == 'helloCarlos':
+                func = f'def {self.fname[0]}(): print("{self.fblock[0]}")'
+                tion = f'{self.fname[0]}()'
             exec(func)
             exec(tion)
 

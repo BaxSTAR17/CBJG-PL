@@ -26,9 +26,9 @@ class Lexer:
                     tmp = []
                 elif ''.join(tmp) in self.keywords:
                     self.tokens.append({'id': 'keyword', 'value': ''.join(tmp)})
-                    tmp = []
-                    if tid == '':
+                    if tid == '' and ''.join(tmp) == 'joshua':
                         tid = 'function name'
+                    tmp = []
                 elif ''.join(tmp) in self.labels:
                     self.tokens.append({'id': 'label', 'value': ''.join(tmp)})
                     tmp = []
@@ -57,9 +57,9 @@ class Lexer:
                     tmp = []
                     btmp = []
                 elif l == ' ' and tid != 'arguments':
-                    continue
+                    btmp.append(' ')
                 elif l == ' ' and tl == 'function block':
-                    btmp.append(l)
+                    btmp.append(' ')
                 elif l == '\n':
                     '''tmp = []
                     btmp = []'''
