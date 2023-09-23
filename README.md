@@ -1,4 +1,5 @@
 # CBJG-PL
-functions so far:
-helloCarlos()
+syntax so far:
+* helloCarlos()
+* joshua {function name}() => {function code};
 
