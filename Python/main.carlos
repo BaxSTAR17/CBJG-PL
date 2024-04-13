@@ -1,7 +1,3 @@
 CARLOS
-joshua test() =>
-    helloCarlos(Hello World)
-;
 
-test()
-helloCarlos(Hello World)
+helloCarlos(October 1)

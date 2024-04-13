@@ -45,7 +45,10 @@ class Eval:
             exec(tion)
 
     def helloCarlos(self, v):
-        print(v)
+        if v == 'October 1':
+            print("Happy Birthday Carlos!")
+        else:
+            print(v)
 
     def stop(self):
         quit()
