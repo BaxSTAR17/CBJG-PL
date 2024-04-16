@@ -18,9 +18,9 @@ UNIMPLEMENTED ATM:
 * joshua {function name}() => {function code};
 
 SAMPLE CODE:
-car name = "Hello"
-car num = 1 Ghen 2
-num = 2 ghEn 42
-helloCarlos(name) //output: "Hello"
-helloCarlos(num) //output: 84
+- car name = "Hello"
+- car num = 1 Ghen 2
+- num = 2 ghEn 42
+- helloCarlos(name) //output: "Hello"
+- helloCarlos(num) //output: 84
 
